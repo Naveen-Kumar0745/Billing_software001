@@ -373,17 +373,25 @@ window.resetAll = () => {
 
 /* FIREBASE SAVE */
 window.saveBill = async () => {
-    if(sum === 0) return alert("Add items first");
+    if (sum === 0) return alert("Add items first");
+
+    // 🔥 extract ONLY item names
+    let itemNames = [];
+    [...list.rows].forEach(row => {
+        itemNames.push(row.cells[1].innerText);
+    });
+
     try {
         await addDoc(collection(db, "bills"), {
             billNo: billNo.innerText,
             customer: customer.value || "Customer",
             total: sum,
-            items: list.innerHTML,
+            items: itemNames,   // ✅ ONLY ITEM NAMES
             date: new Date().toISOString()
         });
-        alert("Saved to Cloud");
-    } catch(e) { alert("Error saving"); }
+    } catch (e) {
+        alert("Error saving");
+    }
 };
 
 /* VIEW SAVED */
