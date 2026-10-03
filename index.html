@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kokarako biriyani</title>
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Kokarako Biriyani</title>
 
 <style>
-/* MODERN BACKGROUND & LAYOUT */
+
+/* =========================
+   BODY
+========================= */
+
 body {
     font-family: monospace;
-    background:url("BG Img.png") no-repeat center center fixed;
+    background: url("BG Img.png") no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
-/* CENTERED LOGIN/SIGNUP CARD */
+
+
+/* =========================
+   BOX
+========================= */
+
 #authContainer {
     display: flex;
     justify-content: center;
@@ -33,25 +46,50 @@ body {
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-sizing: border-box;
 }
 
-.hidden { display: none !important; }
-
-h2 { text-align: center; margin: 10px 0; color: #333; }
-.address { text-align: center; font-size: 11px; color: #666; }
-
-.logo-title{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-}
-.logo-title img{
-    height:28px;
-    width:auto;
+.hidden {
+    display: none !important;
 }
 
-input, button, select {
+
+/* =========================
+   HEADINGS
+========================= */
+
+h2 {
+    text-align: center;
+    margin: 10px 0;
+    color: #333;
+}
+
+.address {
+    text-align: center;
+    font-size: 11px;
+    color: #666;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.logo-title img {
+    height: 28px;
+    width: auto;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+input,
+button,
+select {
     width: 100%;
     padding: 12px;
     margin: 8px 0;
@@ -61,8 +99,74 @@ input, button, select {
     box-sizing: border-box;
 }
 
-/* Password wrapper for professional eye icon */
-.pass-wrapper { position: relative; }
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #555;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    background: #2d3436;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #000;
+}
+
+.btn-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+}
+
+.btn-center {
+    display: flex;
+    justify-content: center;
+    margin: 6px 0;
+}
+
+.btn-print {
+    background: #0a7cff !important;
+}
+
+.btn-danger {
+    background: #b00020 !important;
+}
+
+.btn-reset {
+    background: #e67e22 !important;
+}
+
+.btn-history {
+    background: #8e44ad !important;
+}
+
+.btn-customer {
+    background: #16a085 !important;
+}
+
+.btn-customer:hover {
+    background: #117864 !important;
+}
+
+
+/* =========================
+   PASSWORD
+========================= */
+
+.pass-wrapper {
+    position: relative;
+}
+
 .toggle-pass {
     position: absolute;
     right: 12px;
@@ -73,33 +177,89 @@ input, button, select {
     align-items: center;
     color: #666;
 }
-.toggle-pass svg { width: 20px; height: 20px; }
 
-button {
-    background: #2d3436;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s;
+.toggle-pass svg {
+    width: 20px;
+    height: 20px;
 }
 
-button:hover { background: #000; }
 
-/* TABLE & BILLING STYLES */
-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 10px; }
-th, td { text-align: center; padding: 6px; border-bottom: 1px solid #eee; }
-th { border-bottom: 1px dashed #000; }
-.total { text-align: right; font-size: 14px; margin-top: 10px; font-weight: bold; }
-.remove { color: red; font-weight: bold; cursor: pointer; }
+/* =========================
+   CUSTOMER STATUS
+========================= */
 
-.btn-row { display: flex; justify-content: space-between; gap: 6px; }
-.btn-center { display: flex; justify-content: center; margin: 6px 0; }
-.btn-print { background: #0a7cff !important; }
-.btn-danger { background: #b00020 !important; }
-.btn-reset { background: #e67e22 !important; }
+.customer-status {
+    padding: 12px;
+    border-radius: 8px;
+    margin: 5px 0 10px 0;
+    font-size: 13px;
+}
 
-/* SAVED BILLS LIST */
+.customer-found {
+    background: #e8f8f5;
+    border: 1px solid #a3e4d7;
+    color: #117864;
+}
+
+.customer-new {
+    background: #fff3cd;
+    border: 1px solid #ffe69c;
+    color: #856404;
+}
+
+.customer-name-display {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.customer-mobile-display {
+    font-size: 12px;
+    margin-top: 4px;
+    color: #666;
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+th,
+td {
+    text-align: center;
+    padding: 6px;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    border-bottom: 1px dashed #000;
+}
+
+.total {
+    text-align: right;
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.remove {
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* =========================
+   SAVED BILLS
+========================= */
+
 .bill-card {
     border-bottom: 1px solid #eee;
     padding: 10px;
@@ -107,18 +267,127 @@ th { border-bottom: 1px dashed #000; }
     justify-content: space-between;
     align-items: center;
 }
-.bill-info { cursor: pointer; flex-grow: 1; }
-.bill-del { color: #b00020; cursor: pointer; font-size: 18px; padding-left: 10px; }
 
-.sales-table { width: 100%; margin-top: 10px; border: 1px solid #eee; }
-.sales-table td { text-align: left; padding: 10px; border-bottom: 1px solid #f2f2f2; }
-.sales-val { font-weight: bold; text-align: right; }
+.bill-info {
+    cursor: pointer;
+    flex-grow: 1;
+    font-size: 12px;
+}
 
-/* PRINT */
-.print-only { display: none; }
+.bill-del {
+    color: #b00020;
+    cursor: pointer;
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+
+/* =========================
+   SALES
+========================= */
+
+.sales-table {
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid #eee;
+}
+
+.sales-table td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.sales-val {
+    font-weight: bold;
+    text-align: right;
+}
+
+
+/* =========================
+   CUSTOMER HISTORY
+========================= */
+
+.customer-summary {
+    background: #f7f2fa;
+    border-radius: 10px;
+    padding: 12px;
+    margin-top: 10px;
+    border: 1px solid #eadcf0;
+}
+
+.customer-summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.customer-summary-row b {
+    color: #6c3483;
+}
+
+.history-card {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 12px;
+    margin-top: 10px;
+    background: #fff;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.history-date {
+    color: #777;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.history-item {
+    font-size: 12px;
+    padding: 4px 0;
+    border-bottom: 1px dotted #ddd;
+}
+
+.history-total {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.history-delete {
+    background: #b00020 !important;
+    margin-top: 10px;
+}
+
+.no-history {
+    text-align: center;
+    color: #777;
+    padding: 20px 5px;
+}
+
+
+/* =========================
+   PRINT
+========================= */
+
+.print-only {
+    display: none;
+}
+
 @media print {
-    body { background: #fff !important; }
-    .box { display: none !important; }
+
+    body {
+        background: #fff !important;
+    }
+
+    .box {
+        display: none !important;
+    }
+
     .print-only {
         display: block !important;
         width: 57mm;
@@ -128,293 +397,3168 @@ th { border-bottom: 1px dashed #000; }
         font-size: 10.5px;
         line-height: 1.2;
     }
-    hr { border-top: 1px dashed #000; }
-    .row { display: flex; justify-content: space-between; font-size: 11px; }
-    .head-row { display: flex; font-weight: bold; font-size: 11px; }
-    .item-row { display: flex; font-size: 11px; }
-    .c-sn { width: 8%; }
-    .c-item { width: 42%; }
-    .c-qty { width: 12%; text-align: right; }
-    .c-rate { width: 18%; text-align: right; }
-    .c-amt { width: 20%; text-align: right; }
+
+    hr {
+        border-top: 1px dashed #000;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+        font-size: 11px;
+    }
+
+    .head-row {
+        display: flex;
+        font-weight: bold;
+        font-size: 11px;
+    }
+
+    .item-row {
+        display: flex;
+        font-size: 11px;
+    }
+
+    .c-sn {
+        width: 8%;
+    }
+
+    .c-item {
+        width: 42%;
+    }
+
+    .c-qty {
+        width: 12%;
+        text-align: right;
+    }
+
+    .c-rate {
+        width: 18%;
+        text-align: right;
+    }
+
+    .c-amt {
+        width: 20%;
+        text-align: right;
+    }
 }
+
 </style>
 </head>
 
+
 <body>
 
+
+<!-- =====================================================
+     LOGIN
+===================================================== -->
+
 <div id="authContainer">
+
     <div class="box" id="loginBox">
-        <h2 id="loginTitle">Admin Login</h2>
-        <input id="email" placeholder="Email">
+
+        <h2 id="loginTitle">
+            Admin Login
+        </h2>
+
+        <input
+            id="email"
+            placeholder="Email"
+        >
+
         <div class="pass-wrapper">
-            <input id="password" type="password" placeholder="Password">
-            <span class="toggle-pass" onclick="togglePassword()">
-                <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+
+            <input
+                id="password"
+                type="password"
+                placeholder="Password"
+            >
+
+            <span
+                class="toggle-pass"
+                onclick="togglePassword()"
+            >
+
+                <svg
+                    id="eyeIcon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+
+                    <path
+                        d="M1 12s4-8 11-8
+                        11 8 11 8-4 8-11 8
+                        -11-8-11-8z">
+                    </path>
+
+                    <circle
+                        cx="12"
+                        cy="12"
+                        r="3">
+                    </circle>
+
+                </svg>
+
             </span>
+
         </div>
-        <button onclick="login()">Login</button>
+
+        <button onclick="login()">
+            Login
+        </button>
+
     </div>
+
 </div>
 
-<div class="box hidden" id="billBox" style="margin-top: 40px; margin-bottom: 40px;">
+
+<!-- =====================================================
+     MAIN BILLING BOX
+===================================================== -->
+
+<div
+    class="box hidden"
+    id="billBox"
+    style="margin-top:40px;margin-bottom:40px;"
+>
+
     <h2 class="logo-title">
-        <img src="Logo.png" alt="Logo">
+
+        <img
+            src="Logo.png"
+            alt="Logo"
+        >
+
         Kokarako Biriyani
+
     </h2>
+
+
     <div class="address">
-        2/253 Palladam Road, Puliampatti, Pollachi, Coimbatore - 642002<br>
+
+        2/253 Palladam Road,
+        Puliampatti,
+        Pollachi,
+        Coimbatore - 642002
+
+        <br>
+
         Ph: 9095302586
+
     </div>
-    <select id="langSelect" onchange="setLang(this.value)">
-        <option value="en">English</option>
-        <option value="ta">தமிழ்</option>
+
+
+    <select
+        id="langSelect"
+        onchange="setLang(this.value)"
+    >
+
+        <option value="en">
+            English
+        </option>
+
+        <option value="ta">
+            தமிழ்
+        </option>
+
     </select>
 
-    <p><b id="billTxt">Bill No:</b> <span id="billNo">001</span></p>
 
-    <input id="customer" placeholder="Customer Name">
-    <input id="item" placeholder="Item">
-    <input id="price" type="number" placeholder="Rate ₹">
-    <button onclick="addItem()" id="addBtn">Add Item</button>
+    <p>
+
+        <b id="billTxt">
+            Bill No:
+        </b>
+
+        <span id="billNo">
+            001
+        </span>
+
+    </p>
+
+
+    <!-- CUSTOMER MOBILE -->
+
+    <input
+        id="customerMobile"
+        type="tel"
+        maxlength="10"
+        inputmode="numeric"
+        placeholder="Customer Mobile Number"
+        oninput="findCustomer()"
+    >
+
+
+    <!-- CUSTOMER STATUS -->
+
+    <div
+        id="customerStatus"
+        class="hidden"
+    ></div>
+
+
+    <!-- NEW CUSTOMER -->
+
+    <div
+        id="newCustomerArea"
+        class="hidden"
+    >
+
+        <input
+            id="customerName"
+            placeholder="Enter Customer Name"
+        >
+
+        <button
+            class="btn-customer"
+            onclick="addNewCustomer()"
+        >
+
+            ➕ Add New Customer
+
+        </button>
+
+    </div>
+
+
+    <!-- EXISTING CUSTOMER -->
+
+    <div
+        id="existingCustomerArea"
+        class="hidden"
+    >
+
+        <div
+            id="existingCustomerName"
+            class="customer-name-display"
+        ></div>
+
+        <div
+            id="existingCustomerMobile"
+            class="customer-mobile-display"
+        ></div>
+
+    </div>
+
+
+    <!-- ITEM -->
+
+    <input
+        id="item"
+        placeholder="Item"
+    >
+
+    <input
+        id="price"
+        type="number"
+        placeholder="Rate ₹"
+    >
+
+    <button
+        onclick="addItem()"
+        id="addBtn"
+    >
+        Add Item
+    </button>
+
+
+    <!-- BILL TABLE -->
 
     <table>
+
         <thead>
+
             <tr>
-                <th>S.No</th><th id="thItem">Item</th>
-                <th id="thQty">Qty</th><th id="thRate">Rate</th>
-                <th id="thAmt">Amt</th><th></th>
+
+                <th>S.No</th>
+
+                <th>Item</th>
+
+                <th>Qty</th>
+
+                <th>Rate</th>
+
+                <th>Amt</th>
+
+                <th></th>
+
             </tr>
+
         </thead>
+
         <tbody id="list"></tbody>
+
     </table>
+
 
     <div class="total">
-        <span id="itemLabel">Items</span> : <span id="itemCount">0</span><br>
-        <span id="totalLabel">TOTAL</span> ₹ <span id="total">0</span>
+
+        <span id="itemLabel">
+            Items
+        </span>
+
+        :
+
+        <span id="itemCount">
+            0
+        </span>
+
+        <br>
+
+        <span id="totalLabel">
+            TOTAL
+        </span>
+
+        ₹
+
+        <span id="total">
+            0
+        </span>
+
     </div>
 
+
+    <!-- BUTTONS -->
+
     <div class="btn-row">
-        <button onclick="saveBill()" id="saveBtn">Save</button>
-        <button onclick="newBill()" id="newBtn">New Bill</button>
+
+        <button
+            onclick="saveBill()"
+            id="saveBtn"
+        >
+            Save
+        </button>
+
+        <button
+            onclick="newBill()"
+            id="newBtn"
+        >
+            New Bill
+        </button>
+
     </div>
+
+
     <div class="btn-row">
-        <button class="btn-reset" onclick="resetAll()">Reset Counter</button>
-        <button onclick="openSaved()" id="savedBtn">Saved Bills</button>
+
+        <button
+            class="btn-reset"
+            onclick="resetAll()"
+        >
+            Reset Counter
+        </button>
+
+        <button
+            onclick="openSaved()"
+            id="savedBtn"
+        >
+            Saved Bills
+        </button>
+
     </div>
+
+
     <div class="btn-row">
-        <button onclick="showSales()" id="salesBtn">Sales</button>
-        <button class="btn-print" onclick="preparePrint();window.print()">PRINT</button>
+
+        <button
+            onclick="showSales()"
+            id="salesBtn"
+        >
+            Sales
+        </button>
+
+        <button
+            class="btn-history"
+            onclick="openCustomerHistory()"
+        >
+            Customer History
+        </button>
+
     </div>
+
+
     <div class="btn-center">
-        <button class="btn-danger" onclick="logout()">Logout</button>
+
+        <button
+            class="btn-print"
+            onclick="preparePrint();window.print()"
+        >
+            PRINT
+        </button>
+
     </div>
+
+
+    <div class="btn-center">
+
+        <button
+            class="btn-danger"
+            onclick="logout()"
+        >
+            Logout
+        </button>
+
+    </div>
+
 </div>
 
-<div class="box hidden" id="savedBox" style="margin-top: 40px;">
-    <h2>Saved Bills</h2>
+
+<!-- =====================================================
+     SAVED BILLS
+===================================================== -->
+
+<div
+    class="box hidden"
+    id="savedBox"
+    style="margin-top:40px;"
+>
+
+    <h2>
+        Saved Bills
+    </h2>
+
     <div id="savedList"></div>
-    <button onclick="back()" style="margin-top: 10px;">Back</button>
+
+    <button onclick="back()">
+        Back
+    </button>
+
 </div>
 
-<div class="box hidden" id="salesBox" style="margin-top: 40px;">
-    <h2>Sales Summary</h2>
+
+<!-- =====================================================
+     SALES
+===================================================== -->
+
+<div
+    class="box hidden"
+    id="salesBox"
+    style="margin-top:40px;"
+>
+
+    <h2>
+        Sales Summary
+    </h2>
+
     <table class="sales-table">
-        <tr><td>Today</td><td id="sToday" class="sales-val">₹0</td></tr>
-        <tr><td>This Month</td><td id="sMonth" class="sales-val">₹0</td></tr>
-        <tr><td>Jan - Jun (H1)</td><td id="sH1" class="sales-val">₹0</td></tr>
-        <tr><td>Jul - Dec (H2)</td><td id="sH2" class="sales-val">₹0</td></tr>
+
+        <tr>
+
+            <td>
+                Today
+            </td>
+
+            <td
+                id="sToday"
+                class="sales-val"
+            >
+                ₹0
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                This Month
+            </td>
+
+            <td
+                id="sMonth"
+                class="sales-val"
+            >
+                ₹0
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                Jan - Jun (H1)
+            </td>
+
+            <td
+                id="sH1"
+                class="sales-val"
+            >
+                ₹0
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                Jul - Dec (H2)
+            </td>
+
+            <td
+                id="sH2"
+                class="sales-val"
+            >
+                ₹0
+            </td>
+
+        </tr>
+
     </table>
-    <br>
-    <button onclick="backFromSales()">Back</button>
+
+    <button onclick="backFromSales()">
+        Back
+    </button>
+
 </div>
 
-<div id="printArea" class="print-only">
-    <div style="text-align:center; font-weight:bold; font-size:14px;">Kokarako Biriyani</div>
-    <div style="text-align:center; font-size:10px;">2/253 Palladam Road, Puliampatti | Ph: 9095302586</div>
-    <hr>
-    <div class="row"><span>Bill No: <span id="pBill"></span></span><span id="pDate"></span></div>
-    <div class="row"><span>Name: <span id="pCustomer"></span></span><span id="pTime"></span></div>
-    <hr>
-    <div class="head-row">
-        <span class="c-sn">#</span><span class="c-item">Item</span><span class="c-qty">Qty</span><span class="c-rate">Rate</span><span class="c-amt">Amt</span>
+
+<!-- =====================================================
+     CUSTOMER HISTORY
+===================================================== -->
+
+<div
+    class="box hidden"
+    id="customerHistoryBox"
+    style="margin-top:40px;"
+>
+
+    <h2>
+        Customer History
+    </h2>
+
+
+    <input
+        id="historyMobile"
+        type="tel"
+        maxlength="10"
+        inputmode="numeric"
+        placeholder="Enter Customer Mobile Number"
+        oninput="searchCustomerHistory()"
+    >
+
+
+    <div
+        id="historyCustomerInfo"
+        class="hidden"
+    ></div>
+
+
+    <div
+        id="customerSummary"
+        class="customer-summary hidden"
+    >
+
+        <div class="customer-summary-row">
+
+            <span>
+                Customer
+            </span>
+
+            <b id="historyCustomerName">
+                -
+            </b>
+
+        </div>
+
+
+        <div class="customer-summary-row">
+
+            <span>
+                Mobile
+            </span>
+
+            <b id="historyCustomerMobile">
+                -
+            </b>
+
+        </div>
+
+
+        <div class="customer-summary-row">
+
+            <span>
+                Total Bills
+            </span>
+
+            <b id="historyBillCount">
+                0
+            </b>
+
+        </div>
+
+
+        <div class="customer-summary-row">
+
+            <span>
+                Total Spent
+            </span>
+
+            <b id="historyTotalSpent">
+                ₹0
+            </b>
+
+        </div>
+
     </div>
-    <hr>
-    <div id="printItems"></div>
-    <hr>
-    <div style="text-align:right; font-weight:bold;">Total ₹ <span id="pTotal"></span></div>
+
+
+    <div id="customerHistoryList">
+
+        <div class="no-history">
+
+            Enter mobile number
+            to search history.
+
+        </div>
+
+    </div>
+
+
+    <button
+        onclick="backFromCustomerHistory()"
+    >
+        Back
+    </button>
+
 </div>
+
+
+<!-- =====================================================
+     PRINT AREA
+===================================================== -->
+
+<div
+    id="printArea"
+    class="print-only"
+>
+
+    <div
+        style="
+        text-align:center;
+        font-weight:bold;
+        font-size:14px;
+        "
+    >
+        Kokarako Biriyani
+    </div>
+
+    <div
+        style="
+        text-align:center;
+        font-size:10px;
+        "
+    >
+
+        2/253 Palladam Road,
+        Puliampatti
+
+        <br>
+
+        Ph: 9095302586
+
+    </div>
+
+    <hr>
+
+    <div class="row">
+
+        <span>
+            Bill No:
+            <span id="pBill"></span>
+        </span>
+
+        <span id="pDate"></span>
+
+    </div>
+
+
+    <div class="row">
+
+        <span>
+            Name:
+            <span id="pCustomer"></span>
+        </span>
+
+        <span id="pTime"></span>
+
+    </div>
+
+
+    <div class="row">
+
+        <span>
+            Mobile:
+            <span id="pMobile"></span>
+        </span>
+
+    </div>
+
+
+    <hr>
+
+
+    <div class="head-row">
+
+        <span class="c-sn">
+            #
+        </span>
+
+        <span class="c-item">
+            Item
+        </span>
+
+        <span class="c-qty">
+            Qty
+        </span>
+
+        <span class="c-rate">
+            Rate
+        </span>
+
+        <span class="c-amt">
+            Amt
+        </span>
+
+    </div>
+
+
+    <hr>
+
+
+    <div id="printItems"></div>
+
+
+    <hr>
+
+
+    <div
+        style="
+        text-align:right;
+        font-weight:bold;
+        "
+    >
+
+        Total ₹
+
+        <span id="pTotal"></span>
+
+    </div>
+
+</div>
+
 
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { getFirestore, collection, addDoc, getDocs, orderBy, query, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+
+/* =====================================================
+   FIREBASE IMPORTS
+===================================================== */
+
+import {
+    initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+
+
+import {
+    getAuth,
+    signInWithEmailAndPassword,
+    signOut
+}
+from
+"https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+
+import {
+    getFirestore,
+    collection,
+    addDoc,
+    getDocs,
+    orderBy,
+    query,
+    where,
+    deleteDoc,
+    doc,
+    limit
+}
+from
+"https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+
+/* =====================================================
+   FIREBASE CONFIG
+===================================================== */
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDu5zwFFSrwPoAHulSebByz21PfigZEeNw",
-  authDomain: "billing-software-c812e.firebaseapp.com",
-  projectId: "billing-software-c812e",
-  storageBucket: "billing-software-c812e.firebasestorage.app",
-  messagingSenderId: "784499794212",
-  appId: "1:784499794212:web:8f2afe45f634a6c26593b1"
+
+    apiKey:
+    "AIzaSyDu5zwFFSrwPoAHulSebByz21PfigZEeNw",
+
+    authDomain:
+    "billing-software-c812e.firebaseapp.com",
+
+    projectId:
+    "billing-software-c812e",
+
+    storageBucket:
+    "billing-software-c812e.firebasestorage.app",
+
+    messagingSenderId:
+    "784499794212",
+
+    appId:
+    "1:784499794212:web:8f2afe45f634a6c26593b1"
+
 };
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
+
+const app =
+initializeApp(firebaseConfig);
+
+
+const auth =
+getAuth(app);
+
+
+const db =
+getFirestore(app);
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
 
 let sum = 0;
+
 let billDocs = [];
-const t={
-    en:{login:"Admin Login",add:"Add Item",save:"Save",new:"New Bill",saved:"Saved Bills",sales:"Sales",items:"Items",total:"TOTAL",bill:"Bill No:"},
-    ta:{login:"நிர்வாகி உள்நுழை",add:"பொருள் சேர்",save:"சேமி",new:"புதிய பில்",saved:"சேமித்த பில்கள்",sales:"விற்பனை",items:"பொருட்கள்",total:"மொத்தம்",bill:"பில் எண்:"}
+
+let currentCustomer = null;
+
+
+/* =====================================================
+   LANGUAGE
+===================================================== */
+
+const translations = {
+
+    en: {
+
+        login:
+        "Admin Login",
+
+        add:
+        "Add Item",
+
+        save:
+        "Save",
+
+        new:
+        "New Bill",
+
+        saved:
+        "Saved Bills",
+
+        sales:
+        "Sales",
+
+        items:
+        "Items",
+
+        total:
+        "TOTAL",
+
+        bill:
+        "Bill No:"
+
+    },
+
+    ta: {
+
+        login:
+        "நிர்வாகி உள்நுழை",
+
+        add:
+        "பொருள் சேர்",
+
+        save:
+        "சேமி",
+
+        new:
+        "புதிய பில்",
+
+        saved:
+        "சேமித்த பில்கள்",
+
+        sales:
+        "விற்பனை",
+
+        items:
+        "பொருட்கள்",
+
+        total:
+        "மொத்தம்",
+
+        bill:
+        "பில் எண்:"
+
+    }
+
 };
 
-/* PASSWORD TOGGLE LOGIC */
-window.togglePassword = () => {
-    const passInput = document.getElementById("password");
-    const eyeIcon = document.getElementById("eyeIcon");
-    
-    if (passInput.type === "password") {
-        passInput.type = "text";
-        // Change to Eye-Off Icon
-        eyeIcon.innerHTML = `<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line>`;
-    } else {
-        passInput.type = "password";
-        // Change back to Eye Icon
-        eyeIcon.innerHTML = `<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>`;
-    }
+
+window.setLang = (lang) => {
+
+    localStorage.lang =
+    lang;
+
+
+    const x =
+    translations[lang];
+
+
+    loginTitle.innerText =
+    x.login;
+
+
+    addBtn.innerText =
+    x.add;
+
+
+    saveBtn.innerText =
+    x.save;
+
+
+    newBtn.innerText =
+    x.new;
+
+
+    savedBtn.innerText =
+    x.saved;
+
+
+    salesBtn.innerText =
+    x.sales;
+
+
+    itemLabel.innerText =
+    x.items;
+
+
+    totalLabel.innerText =
+    x.total;
+
+
+    billTxt.innerText =
+    x.bill;
+
 };
+
+
+setLang(
+    localStorage.lang || "en"
+);
+
+
+/* =====================================================
+   PASSWORD TOGGLE
+===================================================== */
+
+window.togglePassword = () => {
+
+    const passInput =
+    document.getElementById(
+        "password"
+    );
+
+
+    const eyeIcon =
+    document.getElementById(
+        "eyeIcon"
+    );
+
+
+    if (
+        passInput.type ===
+        "password"
+    ) {
+
+        passInput.type =
+        "text";
+
+
+        eyeIcon.innerHTML = `
+
+            <path
+                d="
+                M17.94 17.94
+                A10.07 10.07 0 0 1 12 20
+                c-7 0-11-8-11-8
+                a18.45 18.45 0 0 1 5.06-5.94
+                M9.9 4.24
+                A9.12 9.12 0 0 1 12 4
+                c7 0 11 8 11 8
+                a18.5 18.5 0 0 1-2.16 3.19
+                m-6.72-1.07
+                a3 3 0 1 1-4.24-4.24
+                "
+            ></path>
+
+            <line
+                x1="1"
+                y1="1"
+                x2="23"
+                y2="23"
+            ></line>
+
+        `;
+
+    }
+
+    else {
+
+        passInput.type =
+        "password";
+
+
+        eyeIcon.innerHTML = `
+
+            <path
+                d="
+                M1 12s4-8 11-8
+                11 8 11 8-4 8-11 8
+                -11-8-11-8z"
+            ></path>
+
+            <circle
+                cx="12"
+                cy="12"
+                r="3"
+            ></circle>
+
+        `;
+
+    }
+
+};
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
 
 window.login = async () => {
+
     try {
-        await signInWithEmailAndPassword(auth, email.value, password.value);
-        authContainer.classList.add("hidden");
-        billBox.classList.remove("hidden");
+
+        await signInWithEmailAndPassword(
+            auth,
+            email.value,
+            password.value
+        );
+
+
+        authContainer.classList.add(
+            "hidden"
+        );
+
+
+        billBox.classList.remove(
+            "hidden"
+        );
+
+
         updateBillNoDisplay();
-    } catch(e) { alert("Invalid Credentials"); }
+
+
+        customerMobile.focus();
+
+    }
+
+    catch(error) {
+
+        console.error(error);
+
+        alert(
+            "Invalid Credentials"
+        );
+
+    }
+
 };
 
-window.logout = async () => { await signOut(auth); location.reload(); };
 
-/* LANGUAGE */
-window.setLang = (l) => {
-    localStorage.lang=l;
-    const x=t[l];
-    loginTitle.innerText=x.login; addBtn.innerText=x.add;
-    saveBtn.innerText=x.save; newBtn.innerText=x.new;
-    savedBtn.innerText=x.saved; salesBtn.innerText=x.sales;
-    itemLabel.innerText=x.items; totalLabel.innerText=x.total; billTxt.innerText=x.bill;
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+window.logout = async () => {
+
+    await signOut(auth);
+
+    location.reload();
+
 };
-setLang(localStorage.lang || "en");
 
-/* BILLING LOGIC */
+
+/* =====================================================
+   FIND CUSTOMER
+===================================================== */
+
+window.findCustomer = async () => {
+
+    let mobile =
+    customerMobile.value
+    .replace(/\D/g, "");
+
+
+    customerMobile.value =
+    mobile;
+
+
+    currentCustomer =
+    null;
+
+
+    existingCustomerArea
+    .classList.add(
+        "hidden"
+    );
+
+
+    newCustomerArea
+    .classList.add(
+        "hidden"
+    );
+
+
+    customerStatus
+    .classList.add(
+        "hidden"
+    );
+
+
+    if (
+        mobile.length !== 10
+    ) {
+
+        return;
+
+    }
+
+
+    try {
+
+        const q =
+        query(
+
+            collection(
+                db,
+                "customers"
+            ),
+
+            where(
+                "mobile",
+                "==",
+                mobile
+            ),
+
+            limit(1)
+
+        );
+
+
+        const snap =
+        await getDocs(q);
+
+
+        if (
+            snap.empty
+        ) {
+
+            customerStatus
+            .className =
+            "customer-status customer-new";
+
+
+            customerStatus.innerHTML = `
+
+                <b>New Customer</b>
+
+                <br>
+
+                Mobile number not found.
+
+            `;
+
+
+            customerStatus
+            .classList.remove(
+                "hidden"
+            );
+
+
+            newCustomerArea
+            .classList.remove(
+                "hidden"
+            );
+
+
+            customerName.focus();
+
+            return;
+
+        }
+
+
+        const customerDoc =
+        snap.docs[0];
+
+
+        currentCustomer = {
+
+            id:
+            customerDoc.id,
+
+            ...customerDoc.data()
+
+        };
+
+
+        existingCustomerName
+        .innerText =
+        "👤 " +
+        currentCustomer.name;
+
+
+        existingCustomerMobile
+        .innerText =
+        "📱 " +
+        currentCustomer.mobile;
+
+
+        existingCustomerArea
+        .classList.remove(
+            "hidden"
+        );
+
+
+        customerStatus
+        .className =
+        "customer-status customer-found";
+
+
+        customerStatus.innerHTML = `
+
+            <b>✓ Customer Found</b>
+
+            <br>
+
+            ${currentCustomer.name}
+
+        `;
+
+
+        customerStatus
+        .classList.remove(
+            "hidden"
+        );
+
+    }
+
+    catch(error) {
+
+        console.error(error);
+
+        alert(
+            "Error checking customer."
+        );
+
+    }
+
+};
+
+
+/* =====================================================
+   ADD CUSTOMER
+===================================================== */
+
+window.addNewCustomer = async () => {
+
+    let mobile =
+    customerMobile.value
+    .replace(/\D/g, "");
+
+
+    let name =
+    customerName.value.trim();
+
+
+    if (
+        mobile.length !== 10
+    ) {
+
+        alert(
+            "Enter valid 10 digit mobile number."
+        );
+
+        return;
+
+    }
+
+
+    if (
+        !name
+    ) {
+
+        alert(
+            "Enter customer name."
+        );
+
+        return;
+
+    }
+
+
+    try {
+
+        /* CHECK DUPLICATE MOBILE */
+
+        const checkQuery =
+        query(
+
+            collection(
+                db,
+                "customers"
+            ),
+
+            where(
+                "mobile",
+                "==",
+                mobile
+            ),
+
+            limit(1)
+
+        );
+
+
+        const checkSnap =
+        await getDocs(
+            checkQuery
+        );
+
+
+        if (
+            !checkSnap.empty
+        ) {
+
+            alert(
+                "This mobile number already exists."
+            );
+
+            await findCustomer();
+
+            return;
+
+        }
+
+
+        /* ADD CUSTOMER */
+
+        const customerRef =
+        await addDoc(
+
+            collection(
+                db,
+                "customers"
+            ),
+
+            {
+
+                name:
+                name,
+
+                mobile:
+                mobile,
+
+                createdAt:
+                new Date()
+                .toISOString()
+
+            }
+
+        );
+
+
+        currentCustomer = {
+
+            id:
+            customerRef.id,
+
+            name:
+            name,
+
+            mobile:
+            mobile
+
+        };
+
+
+        existingCustomerName
+        .innerText =
+        "👤 " + name;
+
+
+        existingCustomerMobile
+        .innerText =
+        "📱 " + mobile;
+
+
+        existingCustomerArea
+        .classList.remove(
+            "hidden"
+        );
+
+
+        newCustomerArea
+        .classList.add(
+            "hidden"
+        );
+
+
+        customerStatus
+        .className =
+        "customer-status customer-found";
+
+
+        customerStatus.innerHTML = `
+
+            <b>✓ Customer Added</b>
+
+            <br>
+
+            ${name}
+
+        `;
+
+
+        customerStatus
+        .classList.remove(
+            "hidden"
+        );
+
+
+        customerName.value =
+        "";
+
+
+        alert(
+            "Customer added successfully."
+        );
+
+    }
+
+    catch(error) {
+
+        console.error(error);
+
+        alert(
+            "Error adding customer."
+        );
+
+    }
+
+};
+
+
+/* =====================================================
+   BILL NUMBER
+===================================================== */
+
 function updateBillNoDisplay() {
-    let n = Number(localStorage.getItem("PG_BILL_COUNTER")) || 1;
-    billNo.innerText = String(n).padStart(3, "0");
+
+    let n =
+    Number(
+        localStorage.getItem(
+            "PG_BILL_COUNTER"
+        )
+    ) || 1;
+
+
+    billNo.innerText =
+    String(n).padStart(
+        3,
+        "0"
+    );
+
 }
+
+
+/* =====================================================
+   ADD ITEM
+===================================================== */
 
 window.addItem = () => {
-    let r = +price.value;
-    if(!item.value || !r) return;
-    let q = 1; sum += r;
-    list.innerHTML += `<tr><td></td><td>${item.value}</td><td><button onclick="chgQty(this,-1)" style="width:25px; padding:2px;">-</button> <span>${q}</span> <button onclick="chgQty(this,1)" style="width:25px; padding:2px;">+</button></td><td>₹${r}</td><td>₹${r}</td><td class="remove" onclick="del(this)">❌</td></tr>`;
-    renumber(); total.innerText = sum; item.value = ""; price.value = "";
+
+    let r =
+    Number(price.value);
+
+
+    if (
+        !currentCustomer
+    ) {
+
+        alert(
+            "Please enter customer mobile and select/add the customer first."
+        );
+
+        customerMobile.focus();
+
+        return;
+
+    }
+
+
+    if (
+        !item.value.trim() ||
+        !r
+    ) {
+
+        alert(
+            "Enter item and rate."
+        );
+
+        return;
+
+    }
+
+
+    let q = 1;
+
+
+    sum += r;
+
+
+    list.innerHTML += `
+
+        <tr>
+
+            <td></td>
+
+            <td>
+                ${item.value}
+            </td>
+
+            <td>
+
+                <button
+                    onclick="chgQty(this,-1)"
+                    style="
+                    width:25px;
+                    padding:2px;
+                    margin:0;
+                    "
+                >
+                    -
+                </button>
+
+                <span>
+                    ${q}
+                </span>
+
+                <button
+                    onclick="chgQty(this,1)"
+                    style="
+                    width:25px;
+                    padding:2px;
+                    margin:0;
+                    "
+                >
+                    +
+                </button>
+
+            </td>
+
+            <td>
+                ₹${r}
+            </td>
+
+            <td>
+                ₹${r}
+            </td>
+
+            <td
+                class="remove"
+                onclick="del(this)"
+            >
+                ❌
+            </td>
+
+        </tr>
+
+    `;
+
+
+    renumber();
+
+
+    total.innerText =
+    sum;
+
+
+    item.value =
+    "";
+
+    price.value =
+    "";
+
 };
 
-window.chgQty = (btn, delta) => {
-    let row = btn.closest("tr");
-    let span = row.querySelector("span");
-    let qty = Number(span.innerText) + delta;
-    if(qty < 1) return;
-    let rate = Number(row.cells[3].innerText.replace("₹",""));
-    let oldAmt = Number(row.cells[4].innerText.replace("₹",""));
-    let newAmt = qty * rate;
-    span.innerText = qty; row.cells[4].innerText = "₹" + newAmt;
-    sum = sum - oldAmt + newAmt; total.innerText = sum;
+
+/* =====================================================
+   CHANGE QUANTITY
+===================================================== */
+
+window.chgQty =
+(
+    btn,
+    delta
+) => {
+
+    let row =
+    btn.closest("tr");
+
+
+    let span =
+    row.querySelector("span");
+
+
+    let qty =
+    Number(span.innerText)
+    + delta;
+
+
+    if (
+        qty < 1
+    ) {
+
+        return;
+
+    }
+
+
+    let rate =
+    Number(
+        row.cells[3]
+        .innerText
+        .replace("₹","")
+    );
+
+
+    let oldAmount =
+    Number(
+        row.cells[4]
+        .innerText
+        .replace("₹","")
+    );
+
+
+    let newAmount =
+    qty * rate;
+
+
+    span.innerText =
+    qty;
+
+
+    row.cells[4]
+    .innerText =
+    "₹" + newAmount;
+
+
+    sum =
+    sum -
+    oldAmount +
+    newAmount;
+
+
+    total.innerText =
+    sum;
+
 };
 
-window.del = (e) => {
-    let r = e.closest("tr");
-    sum -= +r.cells[4].innerText.replace("₹","");
-    r.remove(); renumber(); total.innerText = sum;
+
+/* =====================================================
+   DELETE ITEM
+===================================================== */
+
+window.del =
+(element) => {
+
+    let row =
+    element.closest("tr");
+
+
+    sum -=
+    Number(
+        row.cells[4]
+        .innerText
+        .replace("₹","")
+    );
+
+
+    row.remove();
+
+
+    renumber();
+
+
+    total.innerText =
+    sum;
+
 };
 
-function renumber(){
-    [...list.rows].forEach((r,i)=>r.cells[0].innerText=i+1);
-    itemCount.innerText = list.rows.length;
+
+/* =====================================================
+   RENUMBER
+===================================================== */
+
+function renumber() {
+
+    [
+        ...list.rows
+    ].forEach(
+        (row,index) => {
+
+            row.cells[0]
+            .innerText =
+            index + 1;
+
+        }
+    );
+
+
+    itemCount.innerText =
+    list.rows.length;
+
 }
 
+
+/* =====================================================
+   NEW BILL
+===================================================== */
+
 window.newBill = () => {
-    let n = Number(localStorage.getItem("PG_BILL_COUNTER")) || 1;
-    localStorage.setItem("PG_BILL_COUNTER", n + 1);
+
+    let n =
+    Number(
+        localStorage.getItem(
+            "PG_BILL_COUNTER"
+        )
+    ) || 1;
+
+
+    localStorage.setItem(
+        "PG_BILL_COUNTER",
+        n + 1
+    );
+
+
     updateBillNoDisplay();
-    list.innerHTML = ""; sum = 0; total.innerText = 0; itemCount.innerText = 0; customer.value = "";
+
+
+    list.innerHTML =
+    "";
+
+
+    sum = 0;
+
+
+    total.innerText =
+    "0";
+
+
+    itemCount.innerText =
+    "0";
+
+
+    item.value =
+    "";
+
+    price.value =
+    "";
+
+    customerMobile.value =
+    "";
+
+    customerName.value =
+    "";
+
+
+    currentCustomer =
+    null;
+
+
+    customerStatus
+    .classList.add(
+        "hidden"
+    );
+
+
+    existingCustomerArea
+    .classList.add(
+        "hidden"
+    );
+
+
+    newCustomerArea
+    .classList.add(
+        "hidden"
+    );
+
+
+    customerMobile.focus();
+
 };
+
+
+/* =====================================================
+   RESET BILL COUNTER
+===================================================== */
 
 window.resetAll = () => {
-    if(confirm("Reset counter to 001?")) { localStorage.setItem("PG_BILL_COUNTER", 1); updateBillNoDisplay(); }
-};
 
-/* FIREBASE SAVE, VIEW, DELETE */
-window.saveBill = async () => {
-    if (sum === 0) return alert("Add items first");
-    let items = [];
-    [...list.rows].forEach(r => { items.push({name: r.cells[1].innerText, qty: r.querySelector("span").innerText, rate: r.cells[3].innerText, amt: r.cells[4].innerText}); });
-    try {
-        await addDoc(collection(db, "bills"), { billNo: billNo.innerText, customer: customer.value || "Customer", total: sum, items: items, date: new Date().toISOString() });
-        alert("Bill Saved!");
-    } catch (e) { alert("Error saving"); }
-};
+    if (
+        confirm(
+            "Reset counter to 001?"
+        )
+    ) {
 
-window.openSaved = async () => {
-    billBox.classList.add("hidden"); savedBox.classList.remove("hidden");
-    savedList.innerHTML = "Loading...";
-    const q = query(collection(db, "bills"), orderBy("date", "desc"));
-    const snap = await getDocs(q);
-    savedList.innerHTML = ""; billDocs = [];
-    snap.forEach(d => {
-        let b = d.data(); b.id = d.id; billDocs.push(b);
-        let idx = billDocs.length - 1;
-        savedList.innerHTML += `<div class="bill-card"><div class="bill-info" onclick="loadBill(${idx})"><b>${b.billNo}</b> | ${b.customer} | ₹${b.total}</div><div class="bill-del" onclick="deleteBill('${b.id}')">🗑️</div></div>`;
-    });
-};
+        localStorage.setItem(
+            "PG_BILL_COUNTER",
+            "1"
+        );
 
-window.deleteBill = async (id) => {
-    if(confirm("Delete this bill permanently?")) {
-        try { await deleteDoc(doc(db, "bills", id)); openSaved(); } catch(e) { alert("Error deleting"); }
+
+        updateBillNoDisplay();
+
     }
+
 };
 
-window.loadBill = (i) => {
-    let b = billDocs[i]; billNo.innerText = b.billNo; customer.value = b.customer; list.innerHTML = "";
-    b.items.forEach((item, idx) => {
-        list.innerHTML += `<tr><td>${idx+1}</td><td>${item.name}</td><td><span>${item.qty}</span></td><td>${item.rate}</td><td>${item.amt}</td><td class="remove" onclick="del(this)">❌</td></tr>`;
+
+/* =====================================================
+   SAVE BILL
+===================================================== */
+
+window.saveBill = async () => {
+
+    if (
+        !currentCustomer
+    ) {
+
+        alert(
+            "Please select or add customer first."
+        );
+
+        return;
+
+    }
+
+
+    if (
+        sum === 0
+    ) {
+
+        alert(
+            "Add items first."
+        );
+
+        return;
+
+    }
+
+
+    let items = [];
+
+
+    [
+        ...list.rows
+    ].forEach(row => {
+
+        items.push({
+
+            name:
+            row.cells[1].innerText,
+
+            qty:
+            row.querySelector("span")
+            .innerText,
+
+            rate:
+            row.cells[3].innerText,
+
+            amt:
+            row.cells[4].innerText
+
+        });
+
     });
-    sum = b.total; total.innerText = sum; renumber(); back();
+
+
+    try {
+
+        await addDoc(
+
+            collection(
+                db,
+                "bills"
+            ),
+
+            {
+
+                billNo:
+                billNo.innerText,
+
+                customer:
+                currentCustomer.name,
+
+                mobile:
+                currentCustomer.mobile,
+
+                customerId:
+                currentCustomer.id,
+
+                total:
+                sum,
+
+                items:
+                items,
+
+                date:
+                new Date()
+                .toISOString()
+
+            }
+
+        );
+
+
+        alert(
+            "Bill Saved Successfully!"
+        );
+
+    }
+
+    catch(error) {
+
+        console.error(error);
+
+        alert(
+            "Error saving bill."
+        );
+
+    }
+
 };
 
-window.back = () => { savedBox.classList.add("hidden"); billBox.classList.remove("hidden"); };
 
-window.showSales = async () => {
-    billBox.classList.add("hidden"); salesBox.classList.remove("hidden");
-    let t1=0, t2=0, h1=0, h2=0; let today = new Date().toISOString().slice(0, 10); let month = today.slice(0, 7);
-    const snap = await getDocs(collection(db, "bills"));
-    snap.forEach(d => {
-        let b = d.data(); let dstr = b.date.slice(0, 10); let mstr = b.date.slice(0, 7); let mo = new Date(b.date).getMonth();
-        if (dstr === today) t1 += b.total; if (mstr === month) t2 += b.total; mo < 6 ? h1 += b.total : h2 += b.total;
+/* =====================================================
+   SAVED BILLS
+===================================================== */
+
+window.openSaved =
+async () => {
+
+    billBox.classList.add(
+        "hidden"
+    );
+
+    savedBox.classList.remove(
+        "hidden"
+    );
+
+
+    savedList.innerHTML =
+    "Loading...";
+
+
+    try {
+
+        const q =
+        query(
+
+            collection(
+                db,
+                "bills"
+            ),
+
+            orderBy(
+                "date",
+                "desc"
+            )
+
+        );
+
+
+        const snap =
+        await getDocs(q);
+
+
+        savedList.innerHTML =
+    "";
+
+        billDocs =
+        [];
+
+
+        snap.forEach(d => {
+
+            let b =
+            d.data();
+
+
+            b.id =
+            d.id;
+
+
+            billDocs.push(b);
+
+
+            let index =
+            billDocs.length - 1;
+
+
+            savedList.innerHTML += `
+
+                <div class="bill-card">
+
+                    <div
+                        class="bill-info"
+                        onclick="loadBill(${index})"
+                    >
+
+                        <b>
+                            Bill ${b.billNo}
+                        </b>
+
+                        <br>
+
+                        ${b.customer}
+
+                        <br>
+
+                        📱 ${b.mobile || "-"}
+
+                        <br>
+
+                        ₹${b.total}
+
+                    </div>
+
+
+                    <div
+                        class="bill-del"
+                        onclick="
+                        deleteBill('${b.id}')
+                        "
+                    >
+                        🗑️
+                    </div>
+
+                </div>
+
+            `;
+
+        });
+
+    }
+
+    catch(error) {
+
+        console.error(error);
+
+        savedList.innerHTML =
+        "Error loading bills.";
+
+    }
+
+};
+
+
+/* =====================================================
+   DELETE SAVED BILL
+===================================================== */
+
+window.deleteBill =
+async (id) => {
+
+    if (
+        !confirm(
+            "Delete this bill permanently?"
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    try {
+
+        await deleteDoc(
+            doc(
+                db,
+                "bills",
+                id
+            )
+        );
+
+
+        await openSaved();
+
+    }
+
+    catch(error) {
+
+        console.error(error);
+
+        alert(
+            "Error deleting bill."
+        );
+
+    }
+
+};
+
+
+/* =====================================================
+   LOAD BILL
+===================================================== */
+
+window.loadBill =
+(index) => {
+
+    let b =
+    billDocs[index];
+
+
+    billNo.innerText =
+    b.billNo;
+
+
+    customerMobile.value =
+    b.mobile || "";
+
+
+    currentCustomer = {
+
+        id:
+        b.customerId || "",
+
+        name:
+        b.customer,
+
+        mobile:
+        b.mobile
+
+    };
+
+
+    existingCustomerName
+    .innerText =
+    "👤 " + b.customer;
+
+
+    existingCustomerMobile
+    .innerText =
+    "📱 " + b.mobile;
+
+
+    existingCustomerArea
+    .classList.remove(
+        "hidden"
+    );
+
+
+    customerStatus
+    .className =
+    "customer-status customer-found";
+
+
+    customerStatus.innerHTML = `
+
+        <b>✓ Customer Found</b>
+
+        <br>
+
+        ${b.customer}
+
+    `;
+
+
+    customerStatus
+    .classList.remove(
+        "hidden"
+    );
+
+
+    list.innerHTML =
+    "";
+
+
+    b.items.forEach(
+        (item,index) => {
+
+            list.innerHTML += `
+
+                <tr>
+
+                    <td>
+                        ${index + 1}
+                    </td>
+
+                    <td>
+                        ${item.name}
+                    </td>
+
+                    <td>
+                        <span>
+                            ${item.qty}
+                        </span>
+                    </td>
+
+                    <td>
+                        ${item.rate}
+                    </td>
+
+                    <td>
+                        ${item.amt}
+                    </td>
+
+                    <td
+                        class="remove"
+                        onclick="del(this)"
+                    >
+                        ❌
+                    </td>
+
+                </tr>
+
+            `;
+
+        }
+    );
+
+
+    sum =
+    Number(b.total);
+
+
+    total.innerText =
+    sum;
+
+
+    renumber();
+
+
+    back();
+
+};
+
+
+/* =====================================================
+   BACK
+===================================================== */
+
+window.back = () => {
+
+    savedBox.classList.add(
+        "hidden"
+    );
+
+    billBox.classList.remove(
+        "hidden"
+    );
+
+};
+
+
+/* =====================================================
+   SALES
+===================================================== */
+
+window.showSales =
+async () => {
+
+    billBox.classList.add(
+        "hidden"
+    );
+
+    salesBox.classList.remove(
+        "hidden"
+    );
+
+
+    let todayTotal = 0;
+
+    let monthTotal = 0;
+
+    let h1Total = 0;
+
+    let h2Total = 0;
+
+
+    let now =
+    new Date();
+
+
+    let today =
+    now.toISOString()
+    .slice(0,10);
+
+
+    let month =
+    today.slice(0,7);
+
+
+    try {
+
+        const snap =
+        await getDocs(
+            collection(
+                db,
+                "bills"
+            )
+        );
+
+
+        snap.forEach(d => {
+
+            let b =
+            d.data();
+
+
+            let billDate =
+            new Date(b.date);
+
+
+            let dateString =
+            billDate
+            .toISOString()
+            .slice(0,10);
+
+
+            let monthString =
+            billDate
+            .toISOString()
+            .slice(0,7);
+
+
+            let amount =
+            Number(
+                b.total || 0
+            );
+
+
+            if (
+                dateString === today
+            ) {
+
+                todayTotal +=
+                amount;
+
+            }
+
+
+            if (
+                monthString === month
+            ) {
+
+                monthTotal +=
+                amount;
+
+            }
+
+
+            if (
+                billDate.getMonth() < 6
+            ) {
+
+                h1Total +=
+                amount;
+
+            }
+
+            else {
+
+                h2Total +=
+                amount;
+
+            }
+
+        });
+
+
+        sToday.innerText =
+        "₹" + todayTotal;
+
+
+        sMonth.innerText =
+        "₹" + monthTotal;
+
+
+        sH1.innerText =
+        "₹" + h1Total;
+
+
+        sH2.innerText =
+        "₹" + h2Total;
+
+    }
+
+    catch(error) {
+
+        console.error(error);
+
+        alert(
+            "Error loading sales."
+        );
+
+    }
+
+};
+
+
+/* =====================================================
+   BACK SALES
+===================================================== */
+
+window.backFromSales =
+() => {
+
+    salesBox.classList.add(
+        "hidden"
+    );
+
+    billBox.classList.remove(
+        "hidden"
+    );
+
+};
+
+
+/* =====================================================
+   OPEN CUSTOMER HISTORY
+===================================================== */
+
+window.openCustomerHistory =
+() => {
+
+    billBox.classList.add(
+        "hidden"
+    );
+
+    customerHistoryBox
+    .classList.remove(
+        "hidden"
+    );
+
+
+    historyMobile.value =
+    "";
+
+
+    historyCustomerInfo
+    .classList.add(
+        "hidden"
+    );
+
+
+    customerSummary
+    .classList.add(
+        "hidden"
+    );
+
+
+    customerHistoryList
+    .innerHTML = `
+
+        <div class="no-history">
+
+            Enter mobile number
+            to search history.
+
+        </div>
+
+    `;
+
+
+    historyMobile.focus();
+
+};
+
+
+/* =====================================================
+   SEARCH CUSTOMER HISTORY
+   IMPORTANT:
+   NO ORDERBY HERE
+   THEREFORE NO COMPOSITE INDEX
+===================================================== */
+
+window.searchCustomerHistory =
+async () => {
+
+    let mobile =
+    historyMobile.value
+    .replace(/\D/g, "");
+
+
+    historyMobile.value =
+    mobile;
+
+
+    if (
+        mobile.length !== 10
+    ) {
+
+        historyCustomerInfo
+        .classList.add(
+            "hidden"
+        );
+
+
+        customerSummary
+        .classList.add(
+            "hidden"
+        );
+
+
+        customerHistoryList
+        .innerHTML = `
+
+            <div class="no-history">
+
+                Enter complete
+                10 digit mobile number.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    try {
+
+        /* =========================
+           FIND CUSTOMER
+        ========================= */
+
+        const customerQuery =
+        query(
+
+            collection(
+                db,
+                "customers"
+            ),
+
+            where(
+                "mobile",
+                "==",
+                mobile
+            ),
+
+            limit(1)
+
+        );
+
+
+        const customerSnap =
+        await getDocs(
+            customerQuery
+        );
+
+
+        if (
+            customerSnap.empty
+        ) {
+
+            historyCustomerInfo
+            .className =
+            "customer-status customer-new";
+
+
+            historyCustomerInfo.innerHTML = `
+
+                <b>Customer Not Found</b>
+
+                <br>
+
+                This mobile number
+                is not registered.
+
+            `;
+
+
+            historyCustomerInfo
+            .classList.remove(
+                "hidden"
+            );
+
+
+            customerSummary
+            .classList.add(
+                "hidden"
+            );
+
+
+            customerHistoryList
+            .innerHTML = `
+
+                <div class="no-history">
+
+                    No customer found.
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        const customerData =
+        customerSnap
+        .docs[0]
+        .data();
+
+
+        /* =========================
+           FIND BILLS
+
+           IMPORTANT:
+           Only WHERE mobile.
+           NO ORDERBY.
+        ========================= */
+
+        const billsQuery =
+        query(
+
+            collection(
+                db,
+                "bills"
+            ),
+
+            where(
+                "mobile",
+                "==",
+                mobile
+            )
+
+        );
+
+
+        const billsSnap =
+        await getDocs(
+            billsQuery
+        );
+
+
+        let bills = [];
+
+
+        billsSnap.forEach(d => {
+
+            bills.push({
+
+                id:
+                d.id,
+
+                ...d.data()
+
+            });
+
+        });
+
+
+        /* =========================
+           SORT IN JAVASCRIPT
+        ========================= */
+
+        bills.sort(
+            (a,b) => {
+
+                return (
+                    new Date(b.date) -
+                    new Date(a.date)
+                );
+
+            }
+        );
+
+
+        /* =========================
+           TOTAL
+        ========================= */
+
+        let totalSpent =
+        bills.reduce(
+            (total,bill) => {
+
+                return (
+                    total +
+                    Number(
+                        bill.total || 0
+                    )
+                );
+
+            },
+
+            0
+        );
+
+
+        /* =========================
+           CUSTOMER INFO
+        ========================= */
+
+        historyCustomerInfo
+        .className =
+        "customer-status customer-found";
+
+
+        historyCustomerInfo.innerHTML = `
+
+            <b>✓ Customer Found</b>
+
+            <br>
+
+            ${customerData.name}
+
+        `;
+
+
+        historyCustomerInfo
+        .classList.remove(
+            "hidden"
+        );
+
+
+        historyCustomerName
+        .innerText =
+        customerData.name;
+
+
+        historyCustomerMobile
+        .innerText =
+        mobile;
+
+
+        historyBillCount
+        .innerText =
+        bills.length;
+
+
+        historyTotalSpent
+        .innerText =
+        "₹" + totalSpent;
+
+
+        customerSummary
+        .classList.remove(
+            "hidden"
+        );
+
+
+        customerHistoryList
+        .innerHTML =
+        "";
+
+
+        /* =========================
+           NO BILLS
+        ========================= */
+
+        if (
+            bills.length === 0
+        ) {
+
+            customerHistoryList
+            .innerHTML = `
+
+                <div class="no-history">
+
+                    Customer found.
+
+                    <br><br>
+
+                    No bills available
+                    for this customer.
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        /* =========================
+           DISPLAY BILLS
+        ========================= */
+
+        bills.forEach(bill => {
+
+            let dateText =
+            new Date(
+                bill.date
+            ).toLocaleString();
+
+
+            let itemsHTML =
+            "";
+
+
+            if (
+                Array.isArray(
+                    bill.items
+                )
+            ) {
+
+                bill.items.forEach(
+                    billItem => {
+
+                        itemsHTML += `
+
+                            <div
+                                class="history-item"
+                            >
+
+                                ${billItem.name}
+
+                                ×
+
+                                ${billItem.qty}
+
+                                &nbsp;&nbsp;
+
+                                ₹${billItem.amt}
+
+                            </div>
+
+                        `;
+
+                    }
+                );
+
+            }
+
+
+            customerHistoryList
+            .innerHTML += `
+
+                <div
+                    class="history-card"
+                >
+
+                    <div
+                        class="history-header"
+                    >
+
+                        <span>
+
+                            Bill #${bill.billNo}
+
+                        </span>
+
+                        <span>
+
+                            ₹${bill.total}
+
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="history-date"
+                    >
+
+                        ${dateText}
+
+                    </div>
+
+
+                    <br>
+
+
+                    ${itemsHTML}
+
+
+                    <div
+                        class="history-total"
+                    >
+
+                        Bill Total:
+                        ₹${bill.total}
+
+                    </div>
+
+
+                    <button
+                        class="history-delete"
+                        onclick="
+                        deleteCustomerHistoryBill(
+                            '${bill.id}'
+                        )
+                        "
+                    >
+
+                        🗑️ Remove Bill
+
+                    </button>
+
+                </div>
+
+            `;
+
+        });
+
+    }
+
+    catch(error) {
+
+        console.error(
+            "CUSTOMER HISTORY ERROR:",
+            error
+        );
+
+
+        historyCustomerInfo
+        .className =
+        "customer-status customer-new";
+
+
+        historyCustomerInfo.innerHTML = `
+
+            <b>Unable to load history.</b>
+
+            <br>
+
+            Please check your Firebase
+            connection and Firestore rules.
+
+        `;
+
+
+        historyCustomerInfo
+        .classList.remove(
+            "hidden"
+        );
+
+
+        customerSummary
+        .classList.add(
+            "hidden"
+        );
+
+
+        customerHistoryList
+        .innerHTML = `
+
+            <div class="no-history">
+
+                Error loading customer history.
+
+                <br><br>
+
+                Open browser console
+                (F12 → Console)
+                to see the exact Firebase error.
+
+            </div>
+
+        `;
+
+    }
+
+};
+
+
+/* =====================================================
+   DELETE HISTORY BILL
+===================================================== */
+
+window.deleteCustomerHistoryBill =
+async (id) => {
+
+    if (
+        !confirm(
+            "Delete this bill permanently?"
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    try {
+
+        await deleteDoc(
+            doc(
+                db,
+                "bills",
+                id
+            )
+        );
+
+
+        alert(
+            "Bill deleted successfully."
+        );
+
+
+        await searchCustomerHistory();
+
+    }
+
+    catch(error) {
+
+        console.error(error);
+
+        alert(
+            "Error deleting bill."
+        );
+
+    }
+
+};
+
+
+/* =====================================================
+   BACK CUSTOMER HISTORY
+===================================================== */
+
+window.backFromCustomerHistory =
+() => {
+
+    customerHistoryBox
+    .classList.add(
+        "hidden"
+    );
+
+    billBox.classList.remove(
+        "hidden"
+    );
+
+};
+
+
+/* =====================================================
+   PRINT
+===================================================== */
+
+window.preparePrint =
+() => {
+
+    pBill.innerText =
+    billNo.innerText;
+
+
+    pDate.innerText =
+    new Date()
+    .toLocaleDateString();
+
+
+    pTime.innerText =
+    new Date()
+    .toLocaleTimeString();
+
+
+    pCustomer.innerText =
+    currentCustomer
+    ? currentCustomer.name
+    : "Customer";
+
+
+    pMobile.innerText =
+    currentCustomer
+    ? currentCustomer.mobile
+    : "";
+
+
+    pTotal.innerText =
+    sum;
+
+
+    let html =
+    "";
+
+
+    [
+        ...list.rows
+    ].forEach(row => {
+
+        html += `
+
+            <div
+                class="item-row"
+            >
+
+                <span class="c-sn">
+
+                    ${row.cells[0].innerText}
+
+                </span>
+
+                <span class="c-item">
+
+                    ${row.cells[1].innerText}
+
+                </span>
+
+                <span class="c-qty">
+
+                    ${row.querySelector("span").innerText}
+
+                </span>
+
+                <span class="c-rate">
+
+                    ${row.cells[3].innerText}
+
+                </span>
+
+                <span class="c-amt">
+
+                    ${row.cells[4].innerText}
+
+                </span>
+
+            </div>
+
+        `;
+
     });
-    sToday.innerText = "₹" + t1; sMonth.innerText = "₹" + t2; sH1.innerText = "₹" + h1; sH2.innerText = "₹" + h2;
+
+
+    printItems.innerHTML =
+    html;
+
 };
 
-window.backFromSales = () => { salesBox.classList.add("hidden"); billBox.classList.remove("hidden"); };
-
-window.preparePrint = () => {
-    pBill.innerText = billNo.innerText; pDate.innerText = new Date().toLocaleDateString(); pTime.innerText = new Date().toLocaleTimeString(); pCustomer.innerText = customer.value || "Customer"; pTotal.innerText = sum;
-    let h = "";
-    [...list.rows].forEach(r => { h += `<div class="item-row"><span class="c-sn">${r.cells[0].innerText}</span><span class="c-item">${r.cells[1].innerText}</span><span class="c-qty">${r.querySelector("span").innerText}</span><span class="c-rate">${r.cells[3].innerText}</span><span class="c-amt">${r.cells[4].innerText}</span></div>`; });
-    printItems.innerHTML = h;
-};
 </script>
 
 </body>
